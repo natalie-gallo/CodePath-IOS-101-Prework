@@ -12,8 +12,12 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        ariesImg.isHidden = true
+        ariesDescription.isHidden = true
     }
 
+    @IBOutlet weak var schoolName: UILabel!
+    @IBOutlet weak var futureCareer: UILabel!
     @IBAction func changeBackgroundColor(_ sender: UIButton) {
         func changeColor() -> UIColor{
 
@@ -26,7 +30,18 @@ class ViewController: UIViewController {
         
         let randomColor = changeColor()
             view.backgroundColor = randomColor
+            
+        schoolName.textColor = changeColor()
+        futureCareer.textColor = changeColor()
     }
+    
+    @IBOutlet weak var ariesDescription: UILabel!
+    @IBOutlet weak var ariesImg: UIImageView!
+    @IBAction func showAries(_ sender: UIButton) {
+        ariesImg.isHidden = false
+        ariesDescription.isHidden = false
+    }
+    
     
 }
 
